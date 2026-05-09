@@ -35,5 +35,22 @@ pipeline {
                 '''
             }
         }
+
+        stage('Clone Automation Suite'){
+            steps{
+                dir('automation_repo'){
+                    git branch:'master',
+                    url:'git@github.com:Pratik2234/automation_repo.git'
+                }
+            }
+        }
+
+        stage('Run Automation suite'){
+            steps{
+                dir('automation-suite'){
+                    bat 'gradlew.bat test'
+                }
+            }
+        }
     }
 }
