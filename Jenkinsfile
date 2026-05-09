@@ -47,7 +47,7 @@ pipeline {
 
         stage('Run Automation suite'){
             steps{
-                dir('automation-suite'){
+                dir('automation_repo'){
                     bat 'gradlew.bat test'
                 }
             }
