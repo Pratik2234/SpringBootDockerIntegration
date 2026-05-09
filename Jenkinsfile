@@ -19,8 +19,8 @@ pipeline {
         stage('stop old container'){
             steps{
                 bat '''
-                docker stop springdockerimage-container || exit 0
-                docker rm springdockerimage-container || exit 0
+                docker stop springboot-container || exit 0
+                docker rm springboot-container || exit 0
                 '''
             }
         }
